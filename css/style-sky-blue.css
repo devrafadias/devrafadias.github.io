@@ -9,6 +9,55 @@
 //--//-->   STYLES GENERALES
 ======================================*/
 
+/* @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap'); */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap'); */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap'); */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Viga&display=swap'); */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap'); */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap'); */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+
+#nome-dev {
+  /* font-family: 'Alfa Slab One', cursive; */
+  /* font-family: 'Permanent Marker', cursive; */
+  /* font-family: 'Russo One', sans-serif; */
+  /* font-family: 'Archivo Black', sans-serif; */
+  /* font-family: 'Press Start 2P', cursive; */
+  /* font-family: 'Bungee', cursive; */
+  /* font-family: 'Ultra', serif; */
+  /* font-family: 'Luckiest Guy', cursive; */
+  /* font-family: 'Viga', sans-serif; */
+  /* font-family: 'Sigmar One', cursive; */
+  /* font-family: 'Carter One', cursive; */
+  /* font-family: 'Rock Salt', cursive; */
+  /* font-family: 'Titan One', cursive; */
+  /* font-family: 'Black Ops One', cursive; */
+  /* font-family: 'Bungee Shade', cursive; */
+  /* font-family: 'Gravitas One', cursive; */
+  /* font-family: 'Vast Shadow', cursive; */
+  font-family: 'Rampart One', cursive;
+
+
+}
+
 body {
   background-color: #f5f5f5;
   color: #4e4e4e;
