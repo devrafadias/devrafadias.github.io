@@ -40,8 +40,10 @@ const animateCSS = (element, animation, prefix = 'animate__') =>
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
       $('.back-to-top').fadeIn('slow');
+	  $('#linkMudaCor').fadeIn('slow');
     } else {
       $('.back-to-top').fadeOut('slow');
+	  $('#linkMudaCor').fadeOut('slow');
     }
   });
   $('.back-to-top').click(function(){
@@ -138,4 +140,4 @@ const animateCSS = (element, animation, prefix = 'animate__') =>
 setInterval(()=> { animateCSS('#sobre-mim', 'heartBeat') }, 1000);
 
 animateCSS('#nome-dev', 'zoomInUp');
-animateCSS('#bemvindo', 'flip');
+//animateCSS('#bemvindo', 'flip');

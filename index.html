@@ -4,12 +4,20 @@
   <meta charset="utf-8">
   <title>DevFolio - RAFAEL DIAS</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="devfolio, html, css, javascript, site, layout, sistemas" name="keywords">
-  <meta content="DevFolio profissional do Desenvolvedor Front-End Rafael Dias" name="description">
+  <meta content="desenvolvedor, engenheiro de software, fullstack, java, spring boot, html, css, javascript" name="keywords">
+  <meta content="DevFolio profissional do Desenvolvedor Fullstack Rafael Dias" name="description">
 
   <!-- Favicons -->
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  
+  <!-- Main Stylesheet File -->
+  <link href="css/style-sky-blue.css" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
   <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -21,15 +29,22 @@
   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
-  <!-- Main Stylesheet File -->
-  <link href="css/style-sky-blue.css" rel="stylesheet">
-
   <!-- =======================================================
     Theme Name: DevFolio
     Theme URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
     Author: BootstrapMade.com
     License: https://bootstrapmade.com/license/
   ======================================================= -->
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQVXXJT5MS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FQVXXJT5MS');
+  </script>
+
 </head>
 
 <body id="page-top">
@@ -61,9 +76,35 @@
           <li class="nav-item">
             <a class="nav-link js-scroll" href="#contact">Contatos</a>
           </li>
+        
+          <li id="linkMudaCor" class="nav-item">
+            <div class="btn-group">
+              <a class="btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Alterar a cor do site">
+                  <i id="btnAlteraCor" class="fa fa-circle fa-2x fa-sm" style="color: #48abec;" aria-hidden="true"></i>
+              </a>
+              <div class="dropdown-menu" style="background-color: #01112120;"> 
+                <a title="Mudar a cor do site para verde" style="color: #24b67e;" onclick="mudarCss('style-green', '#24b67e')">
+                   <i class="fa fa-circle fa-2x fa-sm" aria-hidden="true"></i>
+                </a>
+                <a title="Mudar a cor do site para laranja" style="color: #f0642d;" onclick="mudarCss('style-orange', '#f0642d')">
+                  <i class="fa fa-circle fa-2x fa-sm" aria-hidden="true"></i>
+                </a>
+                <a title="Mudar a cor do site para vermelho" style="color: #be3131;" onclick="mudarCss('style-red', '#be3131')">
+                  <i class="fa fa-circle fa-2x fa-sm" aria-hidden="true"></i>
+                </a>
+                <a title="Mudar a cor do site para azul claro" style="color: #48abec;" onclick="mudarCss('style-sky-blue', '#48abec')">
+                  <i class="fa fa-circle fa-2x fa-sm" aria-hidden="true"></i>
+                </a>
+                <a title="Mudar a cor do site para azul escuro" style="color: #0078ff;" onclick="mudarCss('style', '#0078ff')">
+                  <i class="fa fa-circle fa-2x fa-sm" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
+    
   </nav>
   <!--/ Nav End /-->
 
@@ -73,10 +114,10 @@
     <div class="intro-content display-table">
       <div class="table-cell">
         <div class="container">
-          <h1 id="bemvindo" class="intro-title mb-4">Seja bem-vindo ao meu DevFolio</h1>
           <p class="intro-subtitle">
             <span class="text-slider-items">
-              Me chamo Rafael, 
+              Seja bem-vindo ao meu DevFolio!,
+              Me chamo Rafael,
               Sou um Desenvolvedor Full Stack
             </span>
             <strong class="text-slider"></strong>
@@ -104,46 +145,96 @@
                   <div class="col-sm-6 col-md-7">
                     <div class="about-info">
                       <p><span class="title-s">Nome: </span> <span>Rafael Dias de Souza</span></p>
-                      <p><span class="title-s">Profile: </span> <span>Front-End Developer</span></p>
+                      <p><span class="title-s">Profile: </span> <span>Desenvolvedor Full Stack</span></p>
                       <p><span class="title-s">E-mail: </span> <span>rafadias05@gmail.com</span></p>
                       <p><span class="title-s">Fone: </span> <span>(61) 99146-9637</span></p>
                     </div>
                   </div>
                 </div>
                 <div class="skill-mf">
-                  <p class="title-s">Skill</p>
-                  <span>HTML 5</span> <span class="pull-right">90%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0"
-                      aria-valuemax="100"></div>
+                  <p class="title-s">Conhecimentos</p>
+                 
+                  <p class="lead">
+                    Linguagens de Programação e Frameworks
+                  </p>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm">
+                        <ul>
+                          <li>Java</li>
+                          <li>Javascript</li>
+                          <li>Python</li>
+                          <li>Spring Frameworks</li>
+                          <li>JSF (RichFaces)</li>
+                          <li>JBoss Seam</li>
+                        </ul>
+                      </div>
+                      <div class="col-sm">
+                        <ul>
+                          <li>Hibernate</li>
+                          <li>Angular</li>
+                          <li>HTML</li>
+                          <li>CSS</li>
+                          <li>Bootstrap</li>
+                          <li>JQuery</li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
-                  <span>CSS 3</span> <span class="pull-right">72%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0"
-                      aria-valuemax="100"></div>
+
+                  <p class="lead">
+                    Servidores Web / Aplicação
+                  </p>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm">
+                        <ul>
+                          <li>Apache HTTP Server</li>
+                          <li>Nginx</li>
+                        </ul>
+                      </div>
+                      <div class="col-sm">
+                        <li>Apache Tomcat</li>
+                        <li>JBoss/WildFly</li>
+                      </div>
+                    </div>
                   </div>
-                  <span>JAVASCRIPT</span> <span class="pull-right">82%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 82%" aria-valuenow="82" aria-valuemin="0"
-                      aria-valuemax="100"></div>
+
+                  <p class="lead">
+                    Bancos de Dados Relacionais e NoSQL
+                  </p>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm">
+                        <ul>
+                          <li>PostgreSQL</li>
+                          <li>Oracle</li>
+                          <li>MySQL</li>
+                        </ul>
+                      </div>
+                      <div class="col-sm">
+                        <li>MongoDB</li>
+                        <li>ElasticSearch</li>
+                        <li>Redis</li>
+                      </div>
+                    </div>
                   </div>
-                  <span>ES6</span> <span class="pull-right">50%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                      aria-valuemax="100"></div>
-                  </div>
-                  <span>Design Responsivo</span> <span class="pull-right">68%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 68%" aria-valuenow="68" aria-valuemin="0"
-                      aria-valuemax="100"></div>
-                  </div>
-                  <span>Bootstrap</span> <span class="pull-right">65%</span>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 65%" aria-valuenow="65" aria-valuemin="0"
-                      aria-valuemax="100"></div>
-                  </div>
+
+                  <p class="lead">
+                    Softwares e Ferramentas de Desenvolvimento
+                  </p>
+                  <ul>
+                    <li>IDEs: Eclipse, Spring Tool Suite e Visual Studio Code</li>
+                    <li>Clientes de BD: DBeaver, pgAdmin, SQL Developer</li>
+                    <li>Testes de API Rest e SOAP: SoapUI e Postman</li>
+                    <li>Gestão de demandas: Jira, Redmine e Bugzilla</li>
+                    <li>Versionamento de código: Git, Gitlab e Github</li>
+                    <li>Repositório de artefatos: Maven, Artifactory e Nexus</li>
+                  </ul>
+                  
                 </div>
               </div>
+
               <div class="col-md-6">
                 <div class="about-me pt-4 pt-md-0">
                   <div class="title-box-2">
@@ -151,9 +242,23 @@
                       Sobre mim
                     </h5>
                   </div>
+                  
                   <p class="lead">
-                    Terminei recentemente diversos cursos na área de desenvolvimento front-end. 
-                    Como pode ser visto em meu perfil, tenho exercido diversas atividades em meu <a href="https://github.com/githubrafaeldias">github</a>, 
+                    Sou um Engenheiro de Software com formação em Sistemas de Informação pela Faculdade Anhanguera, graduado em 2012. 
+                  </p>
+                  <p class="lead">
+                    Minha carreira se concentra principalmente no desenvolvimento Java, com sólido conhecimento da linguagem e do framework Spring. No passado, também trabalhei com linguagens como PHP, ASP e Visual Basic, demonstrando minha capacidade de adaptação.
+                  </p>
+                  <p class="lead">
+                    Tenho um forte compromisso com a organização de projetos, valorizando a documentação, o código-fonte e o versionamento. Constantemente busco aprimorar minhas habilidades e aplico meu conhecimento em pequenos projetos pessoais envolvendo API's, serviços web, aplicativos desktop/web e automação de rotinas, entre outros interesses.
+                  </p>
+                  <p class="lead">
+                    Minha ambição e curiosidade me impulsionam em ambientes desafiadores, onde continuamente busco oportunidades para aprender e crescer.
+                  </p>
+
+                  <p class="lead">
+                    Terminei recentemente diversos cursos na área de desenvolvimento de aplicações. 
+                    Como pode ser visto em meu perfil, tenho exercido diversas atividades em meu <a href="https://github.com/githubrafaeldias" target="_blank">github</a>, 
                     inclusive fiz <a href="#work">diversos projetos</a> interessante.
                   </p>
                   <p class="lead">
@@ -162,11 +267,20 @@
                     conhecimento que adquiri através de cursos, workshops, fóruns e alguns sistemas desenvolvidos me fazem 
                     um profissional competitivo e qualificado.
                   </p>
+
                   <p class="lead">
-                    Sou um aprendiz rápido e flexível, sempre me esforço para fazer o melhor com qualidade. 
-                    Conheço diversas tecnologias além do HTML, CSS e JavaScript, como os frameworks JavaScript:
-                    Angular e React. Já trabalhei com API e fiz diversos consumos usando RESTFull.
-                  </p>                 
+                    Principais destaques:
+                  </p>
+                  <p class="lead">
+                    <ul>
+                      <li>Experiência sólida em desenvolvimento full stack com Java e Angular.</li>
+                      <li>Proficiência em frameworks como JBoss Seam, Spring, Thymeleaf, Hibernate, Angular e Bootstrap.</li>
+                      <li>Prática com bancos de dados PostgreSQL, Oracle e MySQL.</li>
+                      <li>Uso efetivo de padrões e boas práticas como Design Patterns, Clean Code, SOLID e metodologias TDD.</li>
+                      <li>Possuo várias certificações relevantes em Desenvolvimento Web, Segurança de Desenvolvimento, Java, Spring Boot, Design Patterns, Javascript, Angular, Bootstrap, Python, Docker e AWS.</li>
+                    </ul>
+                  </p>
+                                  
                 </div>
               </div>
             </div>
@@ -265,7 +379,7 @@
               <span class="ico-circle"><i class="ion-ios-calendar-outline"></i></span>
             </div>
             <div class="counter-num">
-              <p class="counter">+5</p>
+              <p class="counter">10</p>
               <span class="counter-text">ANOS DE EXPERIÊNCIA</span>
             </div>
           </div>
@@ -276,8 +390,8 @@
               <span class="ico-circle"><i class="ion-ios-people"></i></span>
             </div>
             <div class="counter-num">
-              <p class="counter">3</p>
-              <span class="counter-text">CLIENTES</span>
+              <p class="counter">12</p>
+              <span class="counter-text">PROJETOS</span>
             </div>
           </div>
         </div>
@@ -569,6 +683,11 @@
                             <div class="validation"></div>
                           </div>
                         </div>
+                        <div class="col-md-12 mb-3">
+                          <div class="form-group">
+                            <div class="g-recaptcha" data-sitekey="6Lc1qckoAAAAAHlFPr6U7qUdXjrV1EWHtzlmL9R9"></div>
+                          </div>
+                        </div>
                         <div class="col-md-12">
                           <input type="hidden" name="nome" value="[DEV FOLIO] - CONTATO"> 
                           <button type="submit" id="btnMandar" class="button button-a button-big button-rouded">Enviar</button>
@@ -612,7 +731,7 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="copyright-box">
-              <p class="copyright">&copy; Copyright <strong>DevFolio - RAFAEL DIAS - 2021</strong>. Todos os direitos reservados</p>
+              <p class="copyright">&copy; Copyright <strong>DevFolio - RAFAEL DIAS - 2023</strong>. Todos os direitos reservados</p>
             </div>
           </div>
         </div>
@@ -630,17 +749,27 @@
   <script src="lib/popper/popper.min.js"></script>
   <script src="lib/bootstrap/js/bootstrap.min.js"></script>
   <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/counterup/jquery.waypoints.min.js"></script>
+  <script src="lib/counterup/jquery.waypoints.min.js"></script> 
   <script src="lib/counterup/jquery.counterup.js"></script>
   <script src="lib/owlcarousel/owl.carousel.min.js"></script>
   <script src="lib/lightbox/js/lightbox.min.js"></script>
   <script src="lib/typed/typed.min.js"></script>
   
+  <!-- Libs do Firebase -->
+  <script src="js/firebase/firebase-app-compat.js"></script>
+  <script src="js/firebase/firebase-firestore-compat.js"></script>
+  <script src="js/firebase/firebase.js"></script>
+
   <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
+  <script src="js/contactform/contactform.js"></script>
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+
+  <script src="js/util.js"></script>
+
+  <!-- reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </body>
 </html>
